@@ -9,13 +9,18 @@
 /* Begin PBXBuildFile section */
 		2E5019E5B3B5C734B00528D3 /* Pods_LastfmClientTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC10C93A5B58DBA308A8769C /* Pods_LastfmClientTests.framework */; };
 		32484B8F2037F27600BCE94B /* LastfmClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32484B852037F27600BCE94B /* LastfmClient.framework */; };
-		32484B942037F27600BCE94B /* LastfmClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32484B932037F27600BCE94B /* LastfmClientTests.swift */; };
 		32484B962037F27600BCE94B /* LastfmClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 32484B882037F27600BCE94B /* LastfmClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		32484BA62037F2C600BCE94B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32484BA52037F2C600BCE94B /* AppDelegate.swift */; };
 		32484BA82037F2C600BCE94B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32484BA72037F2C600BCE94B /* ViewController.swift */; };
 		32484BAB2037F2C600BCE94B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32484BA92037F2C600BCE94B /* Main.storyboard */; };
 		32484BAD2037F2C600BCE94B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32484BAC2037F2C600BCE94B /* Assets.xcassets */; };
 		32484BB02037F2C600BCE94B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32484BAE2037F2C600BCE94B /* LaunchScreen.storyboard */; };
+		32484BC42037F7D200BCE94B /* LastfmAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32484BC32037F7D200BCE94B /* LastfmAPI.swift */; };
+		32484BC62037F9D500BCE94B /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32484BC52037F9D500BCE94B /* Configuration.swift */; };
+		32484BCC2038001B00BCE94B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32484BCB2038001B00BCE94B /* User.swift */; };
+		32484BCE2038052D00BCE94B /* TestConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32484BCD2038052D00BCE94B /* TestConfiguration.swift */; };
+		32484BD02038053B00BCE94B /* TestConfiguration.sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32484BCF2038053B00BCE94B /* TestConfiguration.sample.swift */; };
+		326A99862038152F004E9F05 /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326A99852038152F004E9F05 /* UserTests.swift */; };
 		58DCBD91F7417E4CFAF32305 /* Pods_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76E714DD3E41BBEDCE37C795 /* Pods_Demo.framework */; };
 		B4153495DF7F0238D37BE39F /* Pods_LastfmClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC5C1E1194E1FAD5EB4C8575 /* Pods_LastfmClient.framework */; };
 /* End PBXBuildFile section */
@@ -36,7 +41,6 @@
 		32484B882037F27600BCE94B /* LastfmClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LastfmClient.h; sourceTree = "<group>"; };
 		32484B892037F27600BCE94B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32484B8E2037F27600BCE94B /* LastfmClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LastfmClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		32484B932037F27600BCE94B /* LastfmClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastfmClientTests.swift; sourceTree = "<group>"; };
 		32484B952037F27600BCE94B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32484BA32037F2C600BCE94B /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32484BA52037F2C600BCE94B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +51,12 @@
 		32484BB12037F2C600BCE94B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32484BBA2037F2C600BCE94B /* DemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTests.swift; sourceTree = "<group>"; };
 		32484BBC2037F2C600BCE94B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32484BC32037F7D200BCE94B /* LastfmAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastfmAPI.swift; sourceTree = "<group>"; };
+		32484BC52037F9D500BCE94B /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		32484BCB2038001B00BCE94B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		32484BCD2038052D00BCE94B /* TestConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestConfiguration.swift; sourceTree = "<group>"; };
+		32484BCF2038053B00BCE94B /* TestConfiguration.sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestConfiguration.sample.swift; sourceTree = "<group>"; };
+		326A99852038152F004E9F05 /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
 		3AFD905FC1FB496D956E3F97 /* Pods-LastfmClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LastfmClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LastfmClient/Pods-LastfmClient.debug.xcconfig"; sourceTree = "<group>"; };
 		76E714DD3E41BBEDCE37C795 /* Pods_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EF76276C8DD22DEA0699803 /* Pods-LastfmClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LastfmClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-LastfmClient/Pods-LastfmClient.release.xcconfig"; sourceTree = "<group>"; };
@@ -112,8 +122,12 @@
 		32484B872037F27600BCE94B /* LastfmClient */ = {
 			isa = PBXGroup;
 			children = (
+				32484BC82037FFD200BCE94B /* Entity */,
+				32484BC72037FFC800BCE94B /* User */,
 				32484B882037F27600BCE94B /* LastfmClient.h */,
 				32484B892037F27600BCE94B /* Info.plist */,
+				32484BC32037F7D200BCE94B /* LastfmAPI.swift */,
+				32484BC52037F9D500BCE94B /* Configuration.swift */,
 			);
 			path = LastfmClient;
 			sourceTree = "<group>";
@@ -121,8 +135,10 @@
 		32484B922037F27600BCE94B /* LastfmClientTests */ = {
 			isa = PBXGroup;
 			children = (
-				32484B932037F27600BCE94B /* LastfmClientTests.swift */,
 				32484B952037F27600BCE94B /* Info.plist */,
+				32484BCD2038052D00BCE94B /* TestConfiguration.swift */,
+				32484BCF2038053B00BCE94B /* TestConfiguration.sample.swift */,
+				326A99852038152F004E9F05 /* UserTests.swift */,
 			);
 			path = LastfmClientTests;
 			sourceTree = "<group>";
@@ -147,6 +163,21 @@
 				32484BBC2037F2C600BCE94B /* Info.plist */,
 			);
 			path = DemoTests;
+			sourceTree = "<group>";
+		};
+		32484BC72037FFC800BCE94B /* User */ = {
+			isa = PBXGroup;
+			children = (
+				32484BCB2038001B00BCE94B /* User.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		32484BC82037FFD200BCE94B /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		6DA684732C917BEB17C614BF /* Pods */ = {
@@ -259,6 +290,7 @@
 				TargetAttributes = {
 					32484B842037F27500BCE94B = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					32484B8D2037F27600BCE94B = {
@@ -465,6 +497,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32484BCC2038001B00BCE94B /* User.swift in Sources */,
+				32484BC62037F9D500BCE94B /* Configuration.swift in Sources */,
+				32484BC42037F7D200BCE94B /* LastfmAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,7 +507,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32484B942037F27600BCE94B /* LastfmClientTests.swift in Sources */,
+				326A99862038152F004E9F05 /* UserTests.swift in Sources */,
+				32484BCE2038052D00BCE94B /* TestConfiguration.swift in Sources */,
+				32484BD02038053B00BCE94B /* TestConfiguration.sample.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -632,6 +669,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3AFD905FC1FB496D956E3F97 /* Pods-LastfmClient.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -645,6 +683,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.starhoshi.lastfmclient.LastfmClient;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -654,6 +693,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9EF76276C8DD22DEA0699803 /* Pods-LastfmClient.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -676,6 +716,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 020687654B5D4344B53FC842 /* Pods-LastfmClientTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5NG7BR536A;
 				INFOPLIST_FILE = LastfmClientTests/Info.plist;
@@ -691,6 +732,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E7510002203317D9B2F109FD /* Pods-LastfmClientTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5NG7BR536A;
 				INFOPLIST_FILE = LastfmClientTests/Info.plist;

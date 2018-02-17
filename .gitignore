@@ -1,9 +1,10 @@
+TestConfiguration.swift
+
 # R.swift
 *.generated.swift
 
 *.dSYM.zip
 Preview.html
-
 
 ### https://raw.github.com/github/gitignore/e7caac93b897f3baa29b5408a11971205accd9a5/Swift.gitignore
 
@@ -247,5 +248,3 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-# Firebase
-GoogleService-Info.plist

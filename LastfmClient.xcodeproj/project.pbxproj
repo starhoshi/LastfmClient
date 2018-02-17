@@ -21,6 +21,8 @@
 		32484BCE2038052D00BCE94B /* TestConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32484BCD2038052D00BCE94B /* TestConfiguration.swift */; };
 		32484BD02038053B00BCE94B /* TestConfiguration.sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32484BCF2038053B00BCE94B /* TestConfiguration.sample.swift */; };
 		326A99862038152F004E9F05 /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326A99852038152F004E9F05 /* UserTests.swift */; };
+		32CACFFB20384CA9004BAC93 /* StringCodableMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CACFFA20384CA9004BAC93 /* StringCodableMap.swift */; };
+		32CACFFD20384CCC004BAC93 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CACFFC20384CCC004BAC93 /* Entity.swift */; };
 		58DCBD91F7417E4CFAF32305 /* Pods_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76E714DD3E41BBEDCE37C795 /* Pods_Demo.framework */; };
 		B4153495DF7F0238D37BE39F /* Pods_LastfmClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC5C1E1194E1FAD5EB4C8575 /* Pods_LastfmClient.framework */; };
 /* End PBXBuildFile section */
@@ -49,14 +51,14 @@
 		32484BAC2037F2C600BCE94B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		32484BAF2037F2C600BCE94B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		32484BB12037F2C600BCE94B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		32484BBA2037F2C600BCE94B /* DemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTests.swift; sourceTree = "<group>"; };
-		32484BBC2037F2C600BCE94B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32484BC32037F7D200BCE94B /* LastfmAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastfmAPI.swift; sourceTree = "<group>"; };
 		32484BC52037F9D500BCE94B /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		32484BCB2038001B00BCE94B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		32484BCD2038052D00BCE94B /* TestConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestConfiguration.swift; sourceTree = "<group>"; };
 		32484BCF2038053B00BCE94B /* TestConfiguration.sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestConfiguration.sample.swift; sourceTree = "<group>"; };
 		326A99852038152F004E9F05 /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
+		32CACFFA20384CA9004BAC93 /* StringCodableMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCodableMap.swift; sourceTree = "<group>"; };
+		32CACFFC20384CCC004BAC93 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		3AFD905FC1FB496D956E3F97 /* Pods-LastfmClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LastfmClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LastfmClient/Pods-LastfmClient.debug.xcconfig"; sourceTree = "<group>"; };
 		76E714DD3E41BBEDCE37C795 /* Pods_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EF76276C8DD22DEA0699803 /* Pods-LastfmClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LastfmClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-LastfmClient/Pods-LastfmClient.release.xcconfig"; sourceTree = "<group>"; };
@@ -102,7 +104,6 @@
 				32484B872037F27600BCE94B /* LastfmClient */,
 				32484B922037F27600BCE94B /* LastfmClientTests */,
 				32484BA42037F2C600BCE94B /* Demo */,
-				32484BB92037F2C600BCE94B /* DemoTests */,
 				32484B862037F27600BCE94B /* Products */,
 				6DA684732C917BEB17C614BF /* Pods */,
 				D497CF5F8C4DFDF5FD751ACD /* Frameworks */,
@@ -122,6 +123,7 @@
 		32484B872037F27600BCE94B /* LastfmClient */ = {
 			isa = PBXGroup;
 			children = (
+				32CACFF920384C8B004BAC93 /* Decodable */,
 				32484BC82037FFD200BCE94B /* Entity */,
 				32484BC72037FFC800BCE94B /* User */,
 				32484B882037F27600BCE94B /* LastfmClient.h */,
@@ -156,15 +158,6 @@
 			path = Demo;
 			sourceTree = "<group>";
 		};
-		32484BB92037F2C600BCE94B /* DemoTests */ = {
-			isa = PBXGroup;
-			children = (
-				32484BBA2037F2C600BCE94B /* DemoTests.swift */,
-				32484BBC2037F2C600BCE94B /* Info.plist */,
-			);
-			path = DemoTests;
-			sourceTree = "<group>";
-		};
 		32484BC72037FFC800BCE94B /* User */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,8 +169,17 @@
 		32484BC82037FFD200BCE94B /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				32CACFFC20384CCC004BAC93 /* Entity.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		32CACFF920384C8B004BAC93 /* Decodable */ = {
+			isa = PBXGroup;
+			children = (
+				32CACFFA20384CA9004BAC93 /* StringCodableMap.swift */,
+			);
+			path = Decodable;
 			sourceTree = "<group>";
 		};
 		6DA684732C917BEB17C614BF /* Pods */ = {
@@ -497,6 +499,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32CACFFB20384CA9004BAC93 /* StringCodableMap.swift in Sources */,
+				32CACFFD20384CCC004BAC93 /* Entity.swift in Sources */,
 				32484BCC2038001B00BCE94B /* User.swift in Sources */,
 				32484BC62037F9D500BCE94B /* Configuration.swift in Sources */,
 				32484BC42037F7D200BCE94B /* LastfmAPI.swift in Sources */,

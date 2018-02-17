@@ -8,9 +8,16 @@
 
 import Foundation
 
-public class Entity {}
+public class Entity { }
 
 extension Entity {
+    public struct Image: Decodable {
+        public let small: URL?
+        public let medium: URL?
+        public let large: URL?
+        public let extralarge: URL?
+    }
+
     public struct User: Decodable {
         public let name: String
         public let realname: String?
@@ -22,8 +29,8 @@ extension Entity {
         public let playcount: Int
         public let playlists: Int
         public let bootstrap: Int
-        //        public let registered: Date
-        //        public let image: Image
+        public let registered: Date
+        public let image: Image
 
         private enum CodingKeys: String, CodingKey {
             case name
@@ -36,8 +43,8 @@ extension Entity {
             case playcount
             case playlists
             case bootstrap
-            //            case registered
-            //            case image
+            case registered
+            case image
         }
 
         private enum UserKeys: String, CodingKey {
@@ -58,7 +65,8 @@ extension Entity {
             playcount = try user.decode(StringCodableMap<Int>.self, forKey: .playcount).decoded
             playlists = try user.decode(StringCodableMap<Int>.self, forKey: .playlists).decoded
             bootstrap = try user.decode(StringCodableMap<Int>.self, forKey: .bootstrap).decoded
+            registered = try user.decode(RegisteredDecodableMap.self, forKey: .registered).decoded
+            image = try user.decode(ImageDecodableMap.self, forKey: .image).decoded
         }
     }
-
 }

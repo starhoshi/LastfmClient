@@ -7,9 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E5019E5B3B5C734B00528D3 /* Pods_LastfmClientTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC10C93A5B58DBA308A8769C /* Pods_LastfmClientTests.framework */; };
 		32484B8F2037F27600BCE94B /* LastfmClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32484B852037F27600BCE94B /* LastfmClient.framework */; };
 		32484B942037F27600BCE94B /* LastfmClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32484B932037F27600BCE94B /* LastfmClientTests.swift */; };
 		32484B962037F27600BCE94B /* LastfmClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 32484B882037F27600BCE94B /* LastfmClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		32484BA62037F2C600BCE94B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32484BA52037F2C600BCE94B /* AppDelegate.swift */; };
+		32484BA82037F2C600BCE94B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32484BA72037F2C600BCE94B /* ViewController.swift */; };
+		32484BAB2037F2C600BCE94B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32484BA92037F2C600BCE94B /* Main.storyboard */; };
+		32484BAD2037F2C600BCE94B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 32484BAC2037F2C600BCE94B /* Assets.xcassets */; };
+		32484BB02037F2C600BCE94B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 32484BAE2037F2C600BCE94B /* LaunchScreen.storyboard */; };
+		58DCBD91F7417E4CFAF32305 /* Pods_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76E714DD3E41BBEDCE37C795 /* Pods_Demo.framework */; };
+		B4153495DF7F0238D37BE39F /* Pods_LastfmClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC5C1E1194E1FAD5EB4C8575 /* Pods_LastfmClient.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,12 +31,30 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		020687654B5D4344B53FC842 /* Pods-LastfmClientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LastfmClientTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LastfmClientTests/Pods-LastfmClientTests.debug.xcconfig"; sourceTree = "<group>"; };
 		32484B852037F27600BCE94B /* LastfmClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LastfmClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32484B882037F27600BCE94B /* LastfmClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LastfmClient.h; sourceTree = "<group>"; };
 		32484B892037F27600BCE94B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32484B8E2037F27600BCE94B /* LastfmClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LastfmClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		32484B932037F27600BCE94B /* LastfmClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastfmClientTests.swift; sourceTree = "<group>"; };
 		32484B952037F27600BCE94B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32484BA32037F2C600BCE94B /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		32484BA52037F2C600BCE94B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		32484BA72037F2C600BCE94B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		32484BAA2037F2C600BCE94B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		32484BAC2037F2C600BCE94B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		32484BAF2037F2C600BCE94B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		32484BB12037F2C600BCE94B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		32484BBA2037F2C600BCE94B /* DemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoTests.swift; sourceTree = "<group>"; };
+		32484BBC2037F2C600BCE94B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AFD905FC1FB496D956E3F97 /* Pods-LastfmClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LastfmClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LastfmClient/Pods-LastfmClient.debug.xcconfig"; sourceTree = "<group>"; };
+		76E714DD3E41BBEDCE37C795 /* Pods_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9EF76276C8DD22DEA0699803 /* Pods-LastfmClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LastfmClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-LastfmClient/Pods-LastfmClient.release.xcconfig"; sourceTree = "<group>"; };
+		AC10C93A5B58DBA308A8769C /* Pods_LastfmClientTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LastfmClientTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD1AFB9BC0048A78DDE9D0CB /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
+		BE035DF86367E2D11CE73EA2 /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
+		E7510002203317D9B2F109FD /* Pods-LastfmClientTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LastfmClientTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LastfmClientTests/Pods-LastfmClientTests.release.xcconfig"; sourceTree = "<group>"; };
+		EC5C1E1194E1FAD5EB4C8575 /* Pods_LastfmClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LastfmClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4153495DF7F0238D37BE39F /* Pods_LastfmClient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +71,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				32484B8F2037F27600BCE94B /* LastfmClient.framework in Frameworks */,
+				2E5019E5B3B5C734B00528D3 /* Pods_LastfmClientTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		32484BA02037F2C600BCE94B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58DCBD91F7417E4CFAF32305 /* Pods_Demo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,7 +91,11 @@
 			children = (
 				32484B872037F27600BCE94B /* LastfmClient */,
 				32484B922037F27600BCE94B /* LastfmClientTests */,
+				32484BA42037F2C600BCE94B /* Demo */,
+				32484BB92037F2C600BCE94B /* DemoTests */,
 				32484B862037F27600BCE94B /* Products */,
+				6DA684732C917BEB17C614BF /* Pods */,
+				D497CF5F8C4DFDF5FD751ACD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +104,7 @@
 			children = (
 				32484B852037F27600BCE94B /* LastfmClient.framework */,
 				32484B8E2037F27600BCE94B /* LastfmClientTests.xctest */,
+				32484BA32037F2C600BCE94B /* Demo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -86,6 +127,51 @@
 			path = LastfmClientTests;
 			sourceTree = "<group>";
 		};
+		32484BA42037F2C600BCE94B /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				32484BA52037F2C600BCE94B /* AppDelegate.swift */,
+				32484BA72037F2C600BCE94B /* ViewController.swift */,
+				32484BA92037F2C600BCE94B /* Main.storyboard */,
+				32484BAC2037F2C600BCE94B /* Assets.xcassets */,
+				32484BAE2037F2C600BCE94B /* LaunchScreen.storyboard */,
+				32484BB12037F2C600BCE94B /* Info.plist */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		32484BB92037F2C600BCE94B /* DemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				32484BBA2037F2C600BCE94B /* DemoTests.swift */,
+				32484BBC2037F2C600BCE94B /* Info.plist */,
+			);
+			path = DemoTests;
+			sourceTree = "<group>";
+		};
+		6DA684732C917BEB17C614BF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BD1AFB9BC0048A78DDE9D0CB /* Pods-Demo.debug.xcconfig */,
+				BE035DF86367E2D11CE73EA2 /* Pods-Demo.release.xcconfig */,
+				3AFD905FC1FB496D956E3F97 /* Pods-LastfmClient.debug.xcconfig */,
+				9EF76276C8DD22DEA0699803 /* Pods-LastfmClient.release.xcconfig */,
+				020687654B5D4344B53FC842 /* Pods-LastfmClientTests.debug.xcconfig */,
+				E7510002203317D9B2F109FD /* Pods-LastfmClientTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D497CF5F8C4DFDF5FD751ACD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				76E714DD3E41BBEDCE37C795 /* Pods_Demo.framework */,
+				EC5C1E1194E1FAD5EB4C8575 /* Pods_LastfmClient.framework */,
+				AC10C93A5B58DBA308A8769C /* Pods_LastfmClientTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -104,10 +190,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 32484B992037F27600BCE94B /* Build configuration list for PBXNativeTarget "LastfmClient" */;
 			buildPhases = (
+				C159EDD4B492B99581F29129 /* [CP] Check Pods Manifest.lock */,
 				32484B802037F27500BCE94B /* Sources */,
 				32484B812037F27500BCE94B /* Frameworks */,
 				32484B822037F27500BCE94B /* Headers */,
 				32484B832037F27500BCE94B /* Resources */,
+				50F2EC20E1A2045CD7B52A1F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -122,9 +210,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 32484B9C2037F27600BCE94B /* Build configuration list for PBXNativeTarget "LastfmClientTests" */;
 			buildPhases = (
+				554C21B814C8863C229826DC /* [CP] Check Pods Manifest.lock */,
 				32484B8A2037F27600BCE94B /* Sources */,
 				32484B8B2037F27600BCE94B /* Frameworks */,
 				32484B8C2037F27600BCE94B /* Resources */,
+				0FB824CE28CFB92C557B3B41 /* [CP] Embed Pods Frameworks */,
+				40AEF841B0DF567990807702 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -135,6 +226,26 @@
 			productName = LastfmClientTests;
 			productReference = 32484B8E2037F27600BCE94B /* LastfmClientTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		32484BA22037F2C600BCE94B /* Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 32484BBD2037F2C600BCE94B /* Build configuration list for PBXNativeTarget "Demo" */;
+			buildPhases = (
+				AAFE08F05C334DA564D250D2 /* [CP] Check Pods Manifest.lock */,
+				32484B9F2037F2C600BCE94B /* Sources */,
+				32484BA02037F2C600BCE94B /* Frameworks */,
+				32484BA12037F2C600BCE94B /* Resources */,
+				5267B2FF21F7AA0868C85BA4 /* [CP] Embed Pods Frameworks */,
+				EFC7C846E89A67304C21740B /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Demo;
+			productName = Demo;
+			productReference = 32484BA32037F2C600BCE94B /* Demo.app */;
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
@@ -154,6 +265,10 @@
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 					};
+					32484BA22037F2C600BCE94B = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 32484B7F2037F27500BCE94B /* Build configuration list for PBXProject "LastfmClient" */;
@@ -162,6 +277,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 32484B7B2037F27500BCE94B;
 			productRefGroup = 32484B862037F27600BCE94B /* Products */;
@@ -170,6 +286,7 @@
 			targets = (
 				32484B842037F27500BCE94B /* LastfmClient */,
 				32484B8D2037F27600BCE94B /* LastfmClientTests */,
+				32484BA22037F2C600BCE94B /* Demo */,
 			);
 		};
 /* End PBXProject section */
@@ -189,7 +306,159 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		32484BA12037F2C600BCE94B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32484BB02037F2C600BCE94B /* LaunchScreen.storyboard in Resources */,
+				32484BAD2037F2C600BCE94B /* Assets.xcassets in Resources */,
+				32484BAB2037F2C600BCE94B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0FB824CE28CFB92C557B3B41 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LastfmClientTests/Pods-LastfmClientTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/APIKit/APIKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/APIKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LastfmClientTests/Pods-LastfmClientTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		40AEF841B0DF567990807702 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LastfmClientTests/Pods-LastfmClientTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		50F2EC20E1A2045CD7B52A1F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LastfmClient/Pods-LastfmClient-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5267B2FF21F7AA0868C85BA4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Demo/Pods-Demo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/APIKit/APIKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/APIKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Demo/Pods-Demo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		554C21B814C8863C229826DC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LastfmClientTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AAFE08F05C334DA564D250D2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Demo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C159EDD4B492B99581F29129 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LastfmClient-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EFC7C846E89A67304C21740B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Demo/Pods-Demo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		32484B802037F27500BCE94B /* Sources */ = {
@@ -207,6 +476,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		32484B9F2037F2C600BCE94B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32484BA82037F2C600BCE94B /* ViewController.swift in Sources */,
+				32484BA62037F2C600BCE94B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -216,6 +494,25 @@
 			targetProxy = 32484B902037F27600BCE94B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		32484BA92037F2C600BCE94B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				32484BAA2037F2C600BCE94B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		32484BAE2037F2C600BCE94B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				32484BAF2037F2C600BCE94B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		32484B972037F27600BCE94B /* Debug */ = {
@@ -333,6 +630,7 @@
 		};
 		32484B9A2037F27600BCE94B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AFD905FC1FB496D956E3F97 /* Pods-LastfmClient.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -354,6 +652,7 @@
 		};
 		32484B9B2037F27600BCE94B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9EF76276C8DD22DEA0699803 /* Pods-LastfmClient.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -375,6 +674,7 @@
 		};
 		32484B9D2037F27600BCE94B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 020687654B5D4344B53FC842 /* Pods-LastfmClientTests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5NG7BR536A;
@@ -389,12 +689,45 @@
 		};
 		32484B9E2037F27600BCE94B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E7510002203317D9B2F109FD /* Pods-LastfmClientTests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5NG7BR536A;
 				INFOPLIST_FILE = LastfmClientTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.starhoshi.lastfmclient.LastfmClientTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		32484BBE2037F2C600BCE94B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD1AFB9BC0048A78DDE9D0CB /* Pods-Demo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5NG7BR536A;
+				INFOPLIST_FILE = Demo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.starhoshi.lastfmclient.Demo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		32484BBF2037F2C600BCE94B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE035DF86367E2D11CE73EA2 /* Pods-Demo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5NG7BR536A;
+				INFOPLIST_FILE = Demo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.starhoshi.lastfmclient.Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -427,6 +760,15 @@
 			buildConfigurations = (
 				32484B9D2037F27600BCE94B /* Debug */,
 				32484B9E2037F27600BCE94B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		32484BBD2037F2C600BCE94B /* Build configuration list for PBXNativeTarget "Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				32484BBE2037F2C600BCE94B /* Debug */,
+				32484BBF2037F2C600BCE94B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

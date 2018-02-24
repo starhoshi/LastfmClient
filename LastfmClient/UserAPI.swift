@@ -14,29 +14,41 @@ import Result
 /// https://www.last.fm/api - User
 public class UserAPI {
     /// user (Optional) : The user to fetch info for. Defaults to the authenticated user.
-    public let user: String
+    public let user: String?
 
     /// Initializer
     ///
     /// - Parameter user: username
-    public init(user: String) {
+    public init(user: String?) {
         self.user = user
     }
 
     public typealias GetInfoResponse = User
-
     /// Get information about a user profile.
     /// [https://www.last.fm/api/show/user.getInfo](https://www.last.fm/api/show/user.getInfo)
     public func getInfo(_ handler: @escaping (Result<GetInfoResponse, SessionTaskError>) -> Void) {
-        let infoRequest = UserAPI.InfoRequest(user: self)
+        let infoRequest = UserAPI.InfoRequest(user: user)
         Session.shared.send(infoRequest) { result in
             handler(result)
         }
     }
 
+    public typealias RecentTracksResponse = User
+    /// Get a list of the recent tracks listened to by this user. Also includes the currently playing track with the nowplaying="true" attribute if the user is currently listening.
+    /// [https://www.last.fm/api/show/user.getRecentTracks](https://www.last.fm/api/show/user.getRecentTracks)
+    public func getRecentTracks(user: String? = nil, limit: Int = 50, page: Int = 1, from: TimeInterval = 0, extended: Bool = true, to: TimeInterval = Date().timeIntervalSince1970, _ handler: @escaping (Result<RecentTracksResponse, SessionTaskError>) -> Void) {
+        let username = user ?? self.user ?? ""
+        let infoRequest = UserAPI.RecentTracksRequest(user: username, limit: limit, page: page, from: from, extended: extended, to: to)
+        Session.shared.send(infoRequest) { result in
+            handler(result)
+        }
+    }
+}
+
+extension UserAPI {
     struct InfoRequest: LastfmRequest {
-        let user: UserAPI
-        init(user: UserAPI) {
+        let user: String?
+        init(user: String?) {
             self.user = user
         }
 
@@ -49,7 +61,48 @@ public class UserAPI {
         var queryParameters: [String: Any]? {
             var q = defaultParameters
             q["method"] = "user.getInfo"
-            q["user"] = user.user
+            q["user"] = user ?? ""
+            return q
+        }
+    }
+
+    struct RecentTracksRequest: LastfmRequest {
+        /// user (Required) : The last.fm username to fetch the recent tracks of.
+        let user: String
+        /// limit (Optional) : The number of results to fetch per page. Defaults to 50. Maximum is 200.
+        let limit: Int
+        /// page (Optional) : The page number to fetch. Defaults to first page.
+        let page: Int
+        /// from (Optional) : Beginning timestamp of a range - only display scrobbles after this time, in UNIX timestamp format (integer number of seconds since 00:00:00, January 1st 1970 UTC). This must be in the UTC time zone.
+        let from: TimeInterval
+        /// extended (0|1) (Optional) : Includes extended data in each artist, and whether or not the user has loved each track
+        let extended: Bool
+        /// to (Optional) : End timestamp of a range - only display scrobbles before this time, in UNIX timestamp format (integer number of seconds since 00:00:00, January 1st 1970 UTC). This must be in the UTC time zone.
+        let to: TimeInterval
+        init(user: String, limit: Int, page: Int, from: TimeInterval, extended: Bool, to: TimeInterval) {
+            self.user = user
+            self.limit = limit
+            self.page = page
+            self.from = from
+            self.extended = extended
+            self.to = to
+        }
+
+        typealias Response = GetInfoResponse
+
+        var method: HTTPMethod {
+            return .get
+        }
+
+        var queryParameters: [String: Any]? {
+            var q = defaultParameters
+            q["method"] = "user.getRecentTracks"
+            q["user"] = user
+            q["limit"] = limit
+            q["page"] = page
+            q["from"] = from
+            q["extended"] = extended ? 1 : 0
+            q["to"] = to
             return q
         }
     }

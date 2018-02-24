@@ -62,11 +62,24 @@ class UserTests: XCTestCase {
         let expectation = XCTestExpectation(description: "getRecentTracks")
 
         let user = UserAPI(user: "star__hoshi")
-        user.getRecentTracks(limit: 50) { result in
+        user.getRecentTracks(limit: 100, from: 1519052626, to: 1519139026, extended: true) { result in
             switch result {
             case .success(let user):
                 XCTAssertEqual(user.attr.user, "star__hoshi")
-//                XCTAssertEqual(user.list[0].name, "star__hoshi")
+                XCTAssertEqual(user.attr.page, 1)
+                XCTAssertEqual(user.attr.perPage, 100)
+                XCTAssertEqual(user.attr.total, 15)
+                XCTAssertEqual(user.attr.totalPages, 1)
+                XCTAssertEqual(user.list.count, 15)
+                XCTAssertEqual(user.list[0].name, "little my star")
+                XCTAssertNil(user.list[0].image.small)
+                XCTAssertNil(user.list[0].image.medium)
+                XCTAssertNil(user.list[0].image.large)
+                XCTAssertNil(user.list[0].image.extralarge)
+                XCTAssertFalse(user.list[0].loved)
+                XCTAssertFalse(user.list[0].streamable)
+                XCTAssertEqual(user.list[0].url.absoluteString, "https://www.last.fm/music/U/_/little+my+star")
+                XCTAssertEqual(user.list[0].date.timeIntervalSince1970, 1519135099)
             case .failure(let error):
                 XCTFail("\(error)")
             }

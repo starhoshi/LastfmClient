@@ -36,6 +36,21 @@ struct StringCodableMap<Decoded: LosslessStringConvertible>: Codable {
     }
 }
 
+struct DateDecodableMap: Decodable {
+    var decoded: Date
+
+    enum _Date: String, CodingKey {
+        case uts
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: _Date.self)
+        let time = try container.decode(StringCodableMap<Double>.self, forKey: .uts).decoded
+        let decoded = Date(timeIntervalSince1970: time)
+        self.decoded = decoded
+    }
+}
+
 struct RegisteredDecodableMap: Decodable {
     var decoded: Date
 

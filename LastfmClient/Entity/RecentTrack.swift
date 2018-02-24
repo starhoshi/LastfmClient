@@ -12,7 +12,7 @@ public protocol ListResponse {
     associatedtype List
 
     var list: [List] { get }
-    var attr: Attr { get  }
+    var attr: Attr { get }
 }
 
 public struct Attr: Decodable {
@@ -43,14 +43,33 @@ public struct Attr: Decodable {
 
 public struct Track: Decodable {
     public let name: String
+    public let image: Image
+    public let loved: Bool
+    public let streamable: Bool
+    public let mbid: String
+    public let url: URL
+    public let date: Date
+
     private enum CodingKeys: String, CodingKey {
         case name
+        case image
+        case loved
+        case streamable
+        case mbid
+        case url
+        case date
     }
 
     public init(from decoder: Decoder) throws {
         let decoder = try decoder.container(keyedBy: CodingKeys.self)
 
         name = try decoder.decode(String.self, forKey: .name)
+        image = try decoder.decode(ImageDecodableMap.self, forKey: .image).decoded
+        loved = try decoder.decode(StringCodableMap<Int>.self, forKey: .loved).decoded == 1
+        streamable = try decoder.decode(StringCodableMap<Int>.self, forKey: .streamable).decoded == 1
+        mbid = try decoder.decode(String.self, forKey: .mbid)
+        url = try decoder.decode(URL.self, forKey: .url)
+        date = try decoder.decode(DateDecodableMap.self, forKey: .date).decoded
     }
 }
 
@@ -106,3 +125,4 @@ public struct Track: Decodable {
 //    }
 //}
 //
+

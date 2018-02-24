@@ -80,6 +80,8 @@ class UserTests: XCTestCase {
                 XCTAssertFalse(user.list[0].streamable)
                 XCTAssertEqual(user.list[0].url.absoluteString, "https://www.last.fm/music/U/_/little+my+star")
                 XCTAssertEqual(user.list[0].date.timeIntervalSince1970, 1519135099)
+                XCTAssertEqual(user.list[0].album.text, "魔界天使ジブリール２(フロントウイング)")
+                XCTAssertEqual(user.list[0].album.mbid, "")
             case .failure(let error):
                 XCTFail("\(error)")
             }

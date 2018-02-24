@@ -49,6 +49,7 @@ public struct Track: Decodable {
     public let mbid: String
     public let url: URL
     public let date: Date
+    public let album: Album
 
     private enum CodingKeys: String, CodingKey {
         case name
@@ -58,6 +59,7 @@ public struct Track: Decodable {
         case mbid
         case url
         case date
+        case album
     }
 
     public init(from decoder: Decoder) throws {
@@ -70,59 +72,17 @@ public struct Track: Decodable {
         mbid = try decoder.decode(String.self, forKey: .mbid)
         url = try decoder.decode(URL.self, forKey: .url)
         date = try decoder.decode(DateDecodableMap.self, forKey: .date).decoded
+        album = try decoder.decode(Album.self, forKey: .album)
     }
 }
 
-//public struct ListResponse: Decodable {
-//    public let name: String
-//    public let realname: String?
-//    public let url: URL
-//    public let country: String
-//    public var age: Int
-//    public let gender: String
-//    public let subscriber: Int
-//    public let playcount: Int
-//    public let playlists: Int
-//    public let bootstrap: Int
-//    public let registered: Date
-//    public let image: Image
-//
-//    private enum CodingKeys: String, CodingKey {
-//        case name
-//        case realname
-//        case url
-//        case country
-//        case age
-//        case gender
-//        case subscriber
-//        case playcount
-//        case playlists
-//        case bootstrap
-//        case registered
-//        case image
-//    }
-//
-//    private enum UserKeys: String, CodingKey {
-//        case user
-//    }
-//
-//    public init(from decoder: Decoder) throws {
-//        let values = try decoder.container(keyedBy: UserKeys.self)
-//
-//        let user = try values.nestedContainer(keyedBy: CodingKeys.self, forKey: .user)
-//        name = try user.decode(String.self, forKey: .name)
-//        realname = try user.decodeIfPresent(String.self, forKey: .realname)
-//        url = try user.decode(URL.self, forKey: .url)
-//        country = try user.decode(String.self, forKey: .country)
-//        age = try user.decode(StringCodableMap<Int>.self, forKey: .age).decoded
-//        gender = try user.decode(String.self, forKey: .country)
-//        subscriber = try user.decode(StringCodableMap<Int>.self, forKey: .subscriber).decoded
-//        playcount = try user.decode(StringCodableMap<Int>.self, forKey: .playcount).decoded
-//        playlists = try user.decode(StringCodableMap<Int>.self, forKey: .playlists).decoded
-//        bootstrap = try user.decode(StringCodableMap<Int>.self, forKey: .bootstrap).decoded
-//        registered = try user.decode(RegisteredDecodableMap.self, forKey: .registered).decoded
-//        image = try user.decode(ImageDecodableMap.self, forKey: .image).decoded
-//    }
-//}
-//
+public struct Album: Decodable {
+    public let text: String
+    public let mbid: String
+
+    private enum CodingKeys: String, CodingKey {
+        case text = "#text"
+        case mbid
+    }
+}
 

@@ -23,6 +23,8 @@
 		326A99862038152F004E9F05 /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 326A99852038152F004E9F05 /* UserTests.swift */; };
 		32CACFFB20384CA9004BAC93 /* StringCodableMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CACFFA20384CA9004BAC93 /* StringCodableMap.swift */; };
 		32CACFFD20384CCC004BAC93 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CACFFC20384CCC004BAC93 /* User.swift */; };
+		32CACFFF20415D8A004BAC93 /* RecentTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CACFFE20415D8A004BAC93 /* RecentTrack.swift */; };
+		32CAD00120416009004BAC93 /* ListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CAD00020416009004BAC93 /* ListResponse.swift */; };
 		58DCBD91F7417E4CFAF32305 /* Pods_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76E714DD3E41BBEDCE37C795 /* Pods_Demo.framework */; };
 		B4153495DF7F0238D37BE39F /* Pods_LastfmClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC5C1E1194E1FAD5EB4C8575 /* Pods_LastfmClient.framework */; };
 /* End PBXBuildFile section */
@@ -59,6 +61,8 @@
 		326A99852038152F004E9F05 /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
 		32CACFFA20384CA9004BAC93 /* StringCodableMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCodableMap.swift; sourceTree = "<group>"; };
 		32CACFFC20384CCC004BAC93 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		32CACFFE20415D8A004BAC93 /* RecentTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTrack.swift; sourceTree = "<group>"; };
+		32CAD00020416009004BAC93 /* ListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListResponse.swift; sourceTree = "<group>"; };
 		3AFD905FC1FB496D956E3F97 /* Pods-LastfmClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LastfmClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LastfmClient/Pods-LastfmClient.debug.xcconfig"; sourceTree = "<group>"; };
 		76E714DD3E41BBEDCE37C795 /* Pods_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EF76276C8DD22DEA0699803 /* Pods-LastfmClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LastfmClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-LastfmClient/Pods-LastfmClient.release.xcconfig"; sourceTree = "<group>"; };
@@ -162,6 +166,8 @@
 			isa = PBXGroup;
 			children = (
 				32CACFFC20384CCC004BAC93 /* User.swift */,
+				32CACFFE20415D8A004BAC93 /* RecentTrack.swift */,
+				32CAD00020416009004BAC93 /* ListResponse.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -491,7 +497,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32CACFFF20415D8A004BAC93 /* RecentTrack.swift in Sources */,
 				32CACFFB20384CA9004BAC93 /* StringCodableMap.swift in Sources */,
+				32CAD00120416009004BAC93 /* ListResponse.swift in Sources */,
 				32CACFFD20384CCC004BAC93 /* User.swift in Sources */,
 				32484BCC2038001B00BCE94B /* UserAPI.swift in Sources */,
 				32484BC62037F9D500BCE94B /* Configuration.swift in Sources */,

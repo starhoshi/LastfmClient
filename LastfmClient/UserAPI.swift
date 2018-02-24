@@ -33,7 +33,6 @@ public class UserAPI {
         }
     }
 
-    public typealias RecentTracksResponse = User
     /// Get a list of the recent tracks listened to by this user. Also includes the currently playing track with the nowplaying="true" attribute if the user is currently listening.
     /// [https://www.last.fm/api/show/user.getRecentTracks](https://www.last.fm/api/show/user.getRecentTracks)
     public func getRecentTracks(user: String? = nil, limit: Int = 50, page: Int = 1, from: TimeInterval = 0, extended: Bool = true, to: TimeInterval = Date().timeIntervalSince1970, _ handler: @escaping (Result<RecentTracksResponse, SessionTaskError>) -> Void) {
@@ -88,7 +87,7 @@ extension UserAPI {
             self.to = to
         }
 
-        typealias Response = GetInfoResponse
+        typealias Response = RecentTracksResponse
 
         var method: HTTPMethod {
             return .get
@@ -106,4 +105,43 @@ extension UserAPI {
             return q
         }
     }
+
+    public struct RecentTracksResponse: ListResponse, Decodable {
+        public typealias List = Track
+        public let list: [List]
+        public let attr: Attr
+
+        private enum CodingKeys: String, CodingKey {
+            case list
+            case attr
+        }
+
+        private enum RecentTracksKeys: String, CodingKey {
+            case recenttracks
+        }
+
+        private enum TrackAttrKeys: String, CodingKey {
+            case track
+            case attr = "@attr"
+        }
+
+
+
+        public init(from decoder: Decoder) throws {
+            let values = try decoder.container(keyedBy: RecentTracksKeys.self)
+            let recentTracks = try values.nestedContainer(keyedBy: TrackAttrKeys.self, forKey: .recenttracks)
+            self.attr = try recentTracks.decode(Attr.self, forKey: .attr)
+            self.list = []
+//            let attr = try attrTracks.nestedContainer(keyedBy: TrackAttrKeys.self, forKey: .attr)
+
+//            let tracks = try recentTracks.(keyedBy: TrackKeys.self)
+//            let user = try attr.decode(, forKey: <#T##Attr.CodingKeys#>)
+
+//            name = try decoder.decode(String.self, forKey: .name)
+        }
+
+
+    }
+
 }
+

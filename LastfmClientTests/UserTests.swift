@@ -22,7 +22,7 @@ class UserTests: XCTestCase {
     func testGetInfoWhenNotExistImage() {
         let expectation = XCTestExpectation(description: "getInfo")
 
-        let user = User(user: "star__hoshi")
+        let user = UserAPI(user: "star__hoshi")
         user.getInfo { result in
             switch result {
             case .success(let user):
@@ -39,7 +39,7 @@ class UserTests: XCTestCase {
     func testGetInfoWhenExistImage() {
         let expectation = XCTestExpectation(description: "getInfo")
 
-        let user = User(user: "rj")
+        let user = UserAPI(user: "rj")
         user.getInfo { result in
             switch result {
             case .success(let user):

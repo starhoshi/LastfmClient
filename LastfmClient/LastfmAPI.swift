@@ -10,6 +10,7 @@ import Foundation
 import APIKit
 import Result
 
+/// https://www.last.fm/api
 public protocol LastfmRequest: Request {
 }
 

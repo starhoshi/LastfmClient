@@ -52,7 +52,7 @@ struct RegisteredDecodableMap: Decodable {
 }
 
 struct ImageDecodableMap: Decodable {
-    var decoded: Entity.Image
+    var decoded: Image
 
     enum Size: String, Codable {
         case small
@@ -96,6 +96,6 @@ struct ImageDecodableMap: Decodable {
             }
         }
 
-        self.decoded = Entity.Image(small: small, medium: medium, large: large, extralarge: extralarge)
+        self.decoded = Image(small: small, medium: medium, large: large, extralarge: extralarge)
     }
 }

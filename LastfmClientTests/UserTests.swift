@@ -102,15 +102,15 @@ class UserTests: XCTestCase {
         let expectation = XCTestExpectation(description: "getRecentTracks")
 
         let user = UserAPI(user: "star__hoshi")
-        user.getRecentTracks(limit: 100, from: 1519052626, to: 1519139026, extended: false) { result in
+        user.getRecentTracks(limit: 10, page: 1, from: 1519052626, to: 1519139026, extended: false) { result in
             switch result {
             case .success(let user):
                 XCTAssertEqual(user.attr.user, "star__hoshi")
                 XCTAssertEqual(user.attr.page, 1)
-                XCTAssertEqual(user.attr.perPage, 100)
+                XCTAssertEqual(user.attr.perPage, 10)
                 XCTAssertEqual(user.attr.total, 15)
-                XCTAssertEqual(user.attr.totalPages, 1)
-                XCTAssertEqual(user.list.count, 15)
+                XCTAssertEqual(user.attr.totalPages, 2)
+                XCTAssertEqual(user.list.count, 10)
                 XCTAssertEqual(user.list[0].name, "little my star")
                 XCTAssertNil(user.list[0].image.small)
                 XCTAssertNil(user.list[0].image.medium)

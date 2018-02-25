@@ -30,7 +30,6 @@
 		32CACFFB20384CA9004BAC93 /* StringCodableMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CACFFA20384CA9004BAC93 /* StringCodableMap.swift */; };
 		32CACFFD20384CCC004BAC93 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CACFFC20384CCC004BAC93 /* User.swift */; };
 		32CACFFF20415D8A004BAC93 /* RecentTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CACFFE20415D8A004BAC93 /* RecentTrack.swift */; };
-		32CAD00120416009004BAC93 /* ListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CAD00020416009004BAC93 /* ListResponse.swift */; };
 		58DCBD91F7417E4CFAF32305 /* Pods_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76E714DD3E41BBEDCE37C795 /* Pods_Demo.framework */; };
 		B4153495DF7F0238D37BE39F /* Pods_LastfmClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC5C1E1194E1FAD5EB4C8575 /* Pods_LastfmClient.framework */; };
 /* End PBXBuildFile section */
@@ -74,7 +73,6 @@
 		32CACFFA20384CA9004BAC93 /* StringCodableMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringCodableMap.swift; sourceTree = "<group>"; };
 		32CACFFC20384CCC004BAC93 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		32CACFFE20415D8A004BAC93 /* RecentTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentTrack.swift; sourceTree = "<group>"; };
-		32CAD00020416009004BAC93 /* ListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListResponse.swift; sourceTree = "<group>"; };
 		3AFD905FC1FB496D956E3F97 /* Pods-LastfmClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LastfmClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LastfmClient/Pods-LastfmClient.debug.xcconfig"; sourceTree = "<group>"; };
 		76E714DD3E41BBEDCE37C795 /* Pods_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EF76276C8DD22DEA0699803 /* Pods-LastfmClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LastfmClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-LastfmClient/Pods-LastfmClient.release.xcconfig"; sourceTree = "<group>"; };
@@ -117,8 +115,8 @@
 		323D84772042925B00E3343F /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				323D84782042926300E3343F /* ListResponse.swift */,
 				323D847A2042927400E3343F /* Attr.swift */,
+				323D84782042926300E3343F /* ListResponse.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -126,12 +124,12 @@
 		32484B7B2037F27500BCE94B = {
 			isa = PBXGroup;
 			children = (
+				32484BA42037F2C600BCE94B /* Demo */,
+				D497CF5F8C4DFDF5FD751ACD /* Frameworks */,
 				32484B872037F27600BCE94B /* LastfmClient */,
 				32484B922037F27600BCE94B /* LastfmClientTests */,
-				32484BA42037F2C600BCE94B /* Demo */,
-				32484B862037F27600BCE94B /* Products */,
 				6DA684732C917BEB17C614BF /* Pods */,
-				D497CF5F8C4DFDF5FD751ACD /* Frameworks */,
+				32484B862037F27600BCE94B /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -150,11 +148,11 @@
 			children = (
 				32CACFF920384C8B004BAC93 /* Decodable */,
 				32484BC82037FFD200BCE94B /* Entity */,
-				32484B882037F27600BCE94B /* LastfmClient.h */,
-				32484B892037F27600BCE94B /* Info.plist */,
-				32484BCB2038001B00BCE94B /* UserAPI.swift */,
-				32484BC32037F7D200BCE94B /* LastfmAPI.swift */,
 				32484BC52037F9D500BCE94B /* Configuration.swift */,
+				32484B892037F27600BCE94B /* Info.plist */,
+				32484BC32037F7D200BCE94B /* LastfmAPI.swift */,
+				32484B882037F27600BCE94B /* LastfmClient.h */,
+				32484BCB2038001B00BCE94B /* UserAPI.swift */,
 			);
 			path = LastfmClient;
 			sourceTree = "<group>";
@@ -163,8 +161,8 @@
 			isa = PBXGroup;
 			children = (
 				32484B952037F27600BCE94B /* Info.plist */,
-				32484BCD2038052D00BCE94B /* TestConfiguration.swift */,
 				32484BCF2038053B00BCE94B /* TestConfiguration.sample.swift */,
+				32484BCD2038052D00BCE94B /* TestConfiguration.swift */,
 				326A99852038152F004E9F05 /* UserTests.swift */,
 			);
 			path = LastfmClientTests;
@@ -174,11 +172,11 @@
 			isa = PBXGroup;
 			children = (
 				32484BA52037F2C600BCE94B /* AppDelegate.swift */,
-				32484BA72037F2C600BCE94B /* ViewController.swift */,
-				32484BA92037F2C600BCE94B /* Main.storyboard */,
 				32484BAC2037F2C600BCE94B /* Assets.xcassets */,
-				32484BAE2037F2C600BCE94B /* LaunchScreen.storyboard */,
 				32484BB12037F2C600BCE94B /* Info.plist */,
+				32484BAE2037F2C600BCE94B /* LaunchScreen.storyboard */,
+				32484BA92037F2C600BCE94B /* Main.storyboard */,
+				32484BA72037F2C600BCE94B /* ViewController.swift */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -187,10 +185,9 @@
 			isa = PBXGroup;
 			children = (
 				323D84772042925B00E3343F /* Shared */,
-				32CACFFC20384CCC004BAC93 /* User.swift */,
 				32CACFFE20415D8A004BAC93 /* RecentTrack.swift */,
 				323D846F204285A100E3343F /* TopTrack.swift */,
-				32CAD00020416009004BAC93 /* ListResponse.swift */,
+				32CACFFC20384CCC004BAC93 /* User.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -198,10 +195,10 @@
 		32CACFF920384C8B004BAC93 /* Decodable */ = {
 			isa = PBXGroup;
 			children = (
-				32CACFFA20384CA9004BAC93 /* StringCodableMap.swift */,
 				323D84712042920F00E3343F /* DateDecodableMap.swift */,
-				323D84732042922200E3343F /* RegisteredDecodableMap.swift */,
 				323D84752042923500E3343F /* ImageDecodableMap.swift */,
+				323D84732042922200E3343F /* RegisteredDecodableMap.swift */,
+				32CACFFA20384CA9004BAC93 /* StringCodableMap.swift */,
 			);
 			path = Decodable;
 			sourceTree = "<group>";
@@ -529,7 +526,6 @@
 				323D84722042920F00E3343F /* DateDecodableMap.swift in Sources */,
 				323D8470204285A100E3343F /* TopTrack.swift in Sources */,
 				32CACFFB20384CA9004BAC93 /* StringCodableMap.swift in Sources */,
-				32CAD00120416009004BAC93 /* ListResponse.swift in Sources */,
 				32CACFFD20384CCC004BAC93 /* User.swift in Sources */,
 				323D84742042922200E3343F /* RegisteredDecodableMap.swift in Sources */,
 				32484BCC2038001B00BCE94B /* UserAPI.swift in Sources */,
@@ -575,6 +571,7 @@
 				32484BAA2037F2C600BCE94B /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		32484BAE2037F2C600BCE94B /* LaunchScreen.storyboard */ = {
@@ -583,6 +580,7 @@
 				32484BAF2037F2C600BCE94B /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

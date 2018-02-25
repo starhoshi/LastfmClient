@@ -23,12 +23,12 @@ public class UserAPI {
         self.user = user
     }
 
-    public typealias GetInfoResponse = User
     /// Get information about a user profile.
     /// [https://www.last.fm/api/show/user.getInfo](https://www.last.fm/api/show/user.getInfo)
-    public func getInfo(_ handler: @escaping (Result<GetInfoResponse, SessionTaskError>) -> Void) {
-        let infoRequest = UserAPI.InfoRequest(user: user)
-        Session.shared.send(infoRequest) { result in
+    public func getInfo(user: String? = nil, _ handler: @escaping (Result<User, SessionTaskError>) -> Void) {
+        let username = user ?? self.user ?? ""
+        let request = UserAPI.InfoRequest(user: username)
+        Session.shared.send(request) { result in
             handler(result)
         }
     }
@@ -47,7 +47,24 @@ public class UserAPI {
     ///   - handler: compilation handler
     public func getRecentTracks(user: String? = nil, limit: Int = 50, page: Int = 1, from: TimeInterval = 0, to: TimeInterval = Date().timeIntervalSince1970, extended: Bool = true, _ handler: @escaping (Result<RecentTracksResponse, SessionTaskError>) -> Void) {
         let username = user ?? self.user ?? ""
-        let infoRequest = UserAPI.RecentTracksRequest(user: username, limit: limit, page: page, from: from, extended: extended, to: to)
+        let request = UserAPI.RecentTracksRequest(user: username, limit: limit, page: page, from: from, extended: extended, to: to)
+        Session.shared.send(request) { result in
+            handler(result)
+        }
+    }
+
+    public enum Period: String {
+        case overall
+        case sevenDay = "7day"
+        case oneMonth = "1month"
+        case threeMonth = "3month"
+        case sixMonth = "6month"
+        case twelveMonth = "12month"
+    }
+
+    public func getTopTracks(user: String? = nil, limit: Int = 50, page: Int = 1, period: Period = .overall, _ handler: @escaping (Result<TopTracksResponse, SessionTaskError>) -> Void) {
+        let username = user ?? self.user ?? ""
+        let infoRequest = UserAPI.TopTracks(user: username, limit: limit, page: page, period: period)
         Session.shared.send(infoRequest) { result in
             handler(result)
         }
@@ -61,7 +78,7 @@ extension UserAPI {
             self.user = user
         }
 
-        typealias Response = GetInfoResponse
+        typealias Response = User
 
         var method: HTTPMethod {
             return .get
@@ -74,7 +91,67 @@ extension UserAPI {
             return q
         }
     }
+}
 
+extension UserAPI {
+    struct TopTracks: LastfmRequest {
+        let user: String
+        let limit: Int
+        let page: Int
+        let period: Period
+        init(user: String, limit: Int, page: Int, period: Period) {
+            self.user = user
+            self.limit = limit
+            self.page = page
+            self.period = period
+        }
+
+        typealias Response = TopTracksResponse
+
+        var method: HTTPMethod {
+            return .get
+        }
+
+        var queryParameters: [String: Any]? {
+            var q = defaultParameters
+            q["method"] = "user.getTopTracks"
+            q["user"] = user
+            q["limit"] = limit
+            q["page"] = page
+            q["period"] = period
+            return q
+        }
+    }
+
+    public struct TopTracksResponse: ListResponse, Decodable {
+        public typealias List = TopTrack
+        public let list: [List]
+        public let attr: Attr
+
+        private enum CodingKeys: String, CodingKey {
+            case list
+            case attr
+        }
+
+        private enum TopTracksKeys: String, CodingKey {
+            case toptracks
+        }
+
+        private enum TrackAttrKeys: String, CodingKey {
+            case track
+            case attr = "@attr"
+        }
+
+        public init(from decoder: Decoder) throws {
+            let values = try decoder.container(keyedBy: TopTracksKeys.self)
+            let recentTracks = try values.nestedContainer(keyedBy: TrackAttrKeys.self, forKey: .toptracks)
+            self.attr = try recentTracks.decode(Attr.self, forKey: .attr)
+            self.list = try recentTracks.decode([List].self, forKey: .track)
+        }
+    }
+}
+
+extension UserAPI {
     struct RecentTracksRequest: LastfmRequest {
         let user: String
         let limit: Int
@@ -111,7 +188,7 @@ extension UserAPI {
     }
 
     public struct RecentTracksResponse: ListResponse, Decodable {
-        public typealias List = Track
+        public typealias List = RecentTrack
         public let list: [List]
         public let attr: Attr
 
@@ -129,23 +206,11 @@ extension UserAPI {
             case attr = "@attr"
         }
 
-
-
         public init(from decoder: Decoder) throws {
             let values = try decoder.container(keyedBy: RecentTracksKeys.self)
             let recentTracks = try values.nestedContainer(keyedBy: TrackAttrKeys.self, forKey: .recenttracks)
             self.attr = try recentTracks.decode(Attr.self, forKey: .attr)
-            self.list = try recentTracks.decode([Track].self, forKey: .track)
-//            let attr = try attrTracks.nestedContainer(keyedBy: TrackAttrKeys.self, forKey: .attr)
-
-//            let tracks = try recentTracks.(keyedBy: TrackKeys.self)
-//            let user = try attr.decode(, forKey: <#T##Attr.CodingKeys#>)
-
-//            name = try decoder.decode(String.self, forKey: .name)
+            self.list = try recentTracks.decode([List].self, forKey: .track)
         }
-
-
     }
-
 }
-

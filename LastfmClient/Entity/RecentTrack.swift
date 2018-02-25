@@ -41,16 +41,17 @@ public struct Attr: Decodable {
     }
 }
 
-public struct Track: Decodable {
+public struct RecentTrack: Decodable {
     public let name: String
     public let image: Image
     public let loved: Bool?
     public let streamable: Bool
     public let mbid: String
     public let url: URL
-    public let date: Date
+    public let date: Date?
+    public let nowplaying: Bool
     public let album: Album
-    public let artist: Artist
+    public let artist: RecentArtist
 
     private enum CodingKeys: String, CodingKey {
         case name
@@ -62,6 +63,11 @@ public struct Track: Decodable {
         case date
         case album
         case artist
+        case nowplaying = "@attr"
+    }
+
+    private enum NowplayingKeys: String, CodingKey {
+        case nowplaying
     }
 
     public init(from decoder: Decoder) throws {
@@ -74,9 +80,16 @@ public struct Track: Decodable {
         streamable = try decoder.decode(StringCodableMap<Int>.self, forKey: .streamable).decoded == 1
         mbid = try decoder.decode(String.self, forKey: .mbid)
         url = try decoder.decode(URL.self, forKey: .url)
-        date = try decoder.decode(DateDecodableMap.self, forKey: .date).decoded
+        date = try decoder.decodeIfPresent(DateDecodableMap.self, forKey: .date)?.decoded
         album = try decoder.decode(Album.self, forKey: .album)
-        artist = try decoder.decode(Artist.self, forKey: .artist)
+        artist = try decoder.decode(RecentArtist.self, forKey: .artist)
+        if decoder.contains(.nowplaying) {
+            let nowplayingDecoder = try decoder.nestedContainer(keyedBy: NowplayingKeys.self, forKey: .nowplaying)
+            nowplaying = try nowplayingDecoder.decodeIfPresent(StringCodableMap<Bool>.self, forKey: .nowplaying)?.decoded ?? false
+
+        } else {
+            nowplaying = false
+        }
     }
 }
 
@@ -90,7 +103,7 @@ public struct Album: Decodable {
     }
 }
 
-public struct Artist: Decodable {
+public struct RecentArtist: Decodable {
     public let name: String
     private let text: String? = nil
     public let mbid: String
@@ -115,7 +128,7 @@ public struct Artist: Decodable {
         } else if let text = text {
             self.name = text
         } else {
-            throw DecodingError.valueNotFound(Artist.self, DecodingError.Context(codingPath: [CodingKeys.name], debugDescription: "Both name and #text are nil."))
+            throw DecodingError.valueNotFound(RecentArtist.self, DecodingError.Context(codingPath: [CodingKeys.name], debugDescription: "Both name and #text are nil."))
         }
         image = try decoder.decodeIfPresent(ImageDecodableMap.self, forKey: .image)?.decoded
         mbid = try decoder.decode(String.self, forKey: .mbid)

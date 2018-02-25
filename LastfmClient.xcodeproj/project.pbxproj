@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2E5019E5B3B5C734B00528D3 /* Pods_LastfmClientTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC10C93A5B58DBA308A8769C /* Pods_LastfmClientTests.framework */; };
+		323D8470204285A100E3343F /* TopTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323D846F204285A100E3343F /* TopTrack.swift */; };
 		32484B8F2037F27600BCE94B /* LastfmClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32484B852037F27600BCE94B /* LastfmClient.framework */; };
 		32484B962037F27600BCE94B /* LastfmClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 32484B882037F27600BCE94B /* LastfmClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		32484BA62037F2C600BCE94B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32484BA52037F2C600BCE94B /* AppDelegate.swift */; };
@@ -41,6 +42,7 @@
 
 /* Begin PBXFileReference section */
 		020687654B5D4344B53FC842 /* Pods-LastfmClientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LastfmClientTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LastfmClientTests/Pods-LastfmClientTests.debug.xcconfig"; sourceTree = "<group>"; };
+		323D846F204285A100E3343F /* TopTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTrack.swift; sourceTree = "<group>"; };
 		32484B852037F27600BCE94B /* LastfmClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LastfmClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		32484B882037F27600BCE94B /* LastfmClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LastfmClient.h; sourceTree = "<group>"; };
 		32484B892037F27600BCE94B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 			children = (
 				32CACFFC20384CCC004BAC93 /* User.swift */,
 				32CACFFE20415D8A004BAC93 /* RecentTrack.swift */,
+				323D846F204285A100E3343F /* TopTrack.swift */,
 				32CAD00020416009004BAC93 /* ListResponse.swift */,
 			);
 			path = Entity;
@@ -498,6 +501,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32CACFFF20415D8A004BAC93 /* RecentTrack.swift in Sources */,
+				323D8470204285A100E3343F /* TopTrack.swift in Sources */,
 				32CACFFB20384CA9004BAC93 /* StringCodableMap.swift in Sources */,
 				32CAD00120416009004BAC93 /* ListResponse.swift in Sources */,
 				32CACFFD20384CCC004BAC93 /* User.swift in Sources */,

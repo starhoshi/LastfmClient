@@ -39,7 +39,7 @@ struct StringCodableMap<Decoded: LosslessStringConvertible>: Codable {
 struct DateDecodableMap: Decodable {
     var decoded: Date
 
-    enum _Date: String, CodingKey {
+    private enum _Date: String, CodingKey {
         case uts
     }
 
@@ -54,7 +54,7 @@ struct DateDecodableMap: Decodable {
 struct RegisteredDecodableMap: Decodable {
     var decoded: Date
 
-    enum Registered: String, CodingKey {
+    private enum Registered: String, CodingKey {
         case text = "#text"
     }
 
@@ -69,14 +69,14 @@ struct RegisteredDecodableMap: Decodable {
 struct ImageDecodableMap: Decodable {
     var decoded: Image
 
-    enum Size: String, Codable {
+    private enum Size: String, Codable {
         case small
         case medium
         case large
         case extralarge
     }
 
-    struct _Image: Decodable {
+    private struct _Image: Decodable {
         let text: String
         let size: Size
 

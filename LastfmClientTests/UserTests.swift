@@ -79,7 +79,7 @@ class UserTests: XCTestCase {
                 XCTAssertFalse(user.list[0].loved!)
                 XCTAssertFalse(user.list[0].streamable)
                 XCTAssertEqual(user.list[0].url.absoluteString, "https://www.last.fm/music/U/_/little+my+star")
-                XCTAssertEqual(user.list[0].date.timeIntervalSince1970, 1519135099)
+                XCTAssertEqual(user.list[0].date?.timeIntervalSince1970, 1519135099)
                 XCTAssertEqual(user.list[0].album.text, "魔界天使ジブリール２(フロントウイング)")
                 XCTAssertEqual(user.list[0].album.mbid, "")
                 XCTAssertEqual(user.list[0].artist.name, "U")
@@ -102,30 +102,72 @@ class UserTests: XCTestCase {
         let expectation = XCTestExpectation(description: "getRecentTracks")
 
         let user = UserAPI(user: "star__hoshi")
-        user.getRecentTracks(limit: 10, page: 1, from: 1519052626, to: 1519139026, extended: false) { result in
+        user.getRecentTracks(limit: 10, page: 1, extended: false) { result in
             switch result {
-            case .success(let user):
-                XCTAssertEqual(user.attr.user, "star__hoshi")
-                XCTAssertEqual(user.attr.page, 1)
-                XCTAssertEqual(user.attr.perPage, 10)
-                XCTAssertEqual(user.attr.total, 15)
-                XCTAssertEqual(user.attr.totalPages, 2)
-                XCTAssertEqual(user.list.count, 10)
-                XCTAssertEqual(user.list[0].name, "little my star")
-                XCTAssertNil(user.list[0].image.small)
-                XCTAssertNil(user.list[0].image.medium)
-                XCTAssertNil(user.list[0].image.large)
-                XCTAssertNil(user.list[0].image.extralarge)
-                XCTAssertNil(user.list[0].loved)
-                XCTAssertFalse(user.list[0].streamable)
-                XCTAssertEqual(user.list[0].url.absoluteString, "https://www.last.fm/music/U/_/little+my+star")
-                XCTAssertEqual(user.list[0].date.timeIntervalSince1970, 1519135099)
-                XCTAssertEqual(user.list[0].album.text, "魔界天使ジブリール２(フロントウイング)")
-                XCTAssertEqual(user.list[0].album.mbid, "")
-                XCTAssertEqual(user.list[0].artist.name, "U")
-                XCTAssertEqual(user.list[0].artist.mbid, "f068f7a7-8cff-4104-b7a4-60cc2a060f5a")
-                XCTAssertNil(user.list[0].artist.url?.absoluteString)
-                XCTAssertNil(user.list[0].artist.image)
+            case .success(let response):
+                XCTAssertEqual(response.attr.user, "star__hoshi")
+                XCTAssertEqual(response.attr.page, 1)
+                XCTAssertEqual(response.attr.perPage, 10)
+            case .failure(let error):
+                XCTFail("\(error)")
+            }
+            expectation.fulfill()
+        }
+
+        wait(for: [expectation], timeout: 20)
+    }
+
+    func testTopTracksWhenPeriodIsOverall() {
+        let expectation = XCTestExpectation(description: "getTopTracks")
+
+        let user = UserAPI(user: "star__hoshi")
+        user.getTopTracks(limit: 30, period: .overall) { result in
+            switch result {
+            case .success(let response):
+                XCTAssertEqual(response.attr.user, "star__hoshi")
+                XCTAssertEqual(response.attr.page, 1)
+                XCTAssertEqual(response.attr.perPage, 30)
+                XCTAssertEqual(response.list.count, 30)
+            case .failure(let error):
+                XCTFail("\(error)")
+            }
+            expectation.fulfill()
+        }
+
+        wait(for: [expectation], timeout: 20)
+    }
+
+    func testTopTracksWhenPeriodIsSixMonth() {
+        let expectation = XCTestExpectation(description: "getTopTracks")
+
+        let user = UserAPI(user: "star__hoshi")
+        user.getTopTracks(limit: 300, page: 2, period: .sixMonth) { result in
+            switch result {
+            case .success(let response):
+                XCTAssertEqual(response.attr.user, "star__hoshi")
+                XCTAssertEqual(response.attr.page, 2)
+                XCTAssertEqual(response.attr.perPage, 300)
+                XCTAssertEqual(response.list.count, 300)
+            case .failure(let error):
+                XCTFail("\(error)")
+            }
+            expectation.fulfill()
+        }
+
+        wait(for: [expectation], timeout: 20)
+    }
+
+    func testTopTracksWhenPeriodIs7Day() {
+        let expectation = XCTestExpectation(description: "getTopTracks")
+
+        let user = UserAPI(user: "star__hoshi")
+        user.getTopTracks(limit: 1, page: 1, period: .sevenDay) { result in
+            switch result {
+            case .success(let response):
+                XCTAssertEqual(response.attr.user, "star__hoshi")
+                XCTAssertEqual(response.attr.page, 1)
+                XCTAssertEqual(response.attr.perPage, 1)
+                XCTAssertEqual(response.list.count, 1)
             case .failure(let error):
                 XCTFail("\(error)")
             }

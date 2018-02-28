@@ -9,5 +9,7 @@ Pod::Spec.new do |s|
   s.platform           = :ios, "10.0"
   s.source             = { :git => "https://github.com/starhoshi/LastfmClient.git", :tag => s.version.to_s }
   s.source_files       = "LastfmClient/**/*.{swift}"
+
+  s.dependency         "APIKit", "~> 3.1.1"
 end
 

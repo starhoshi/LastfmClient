@@ -1,6 +1,9 @@
 # LastfmClient
 A Swifty last.fm api client using Codable.
 
+Lastfm's API is not very good. Nested Dictionary, Nonexistent key, etc.  
+If you use LastfmClient, you can handle last.fm api type-safely and Swifty.
+
 # TODO
 
 * [ ] User

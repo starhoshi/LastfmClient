@@ -47,7 +47,7 @@ user.getInfo { result in
 
 1. Get your lastfm api key from [here](https://www.last.fm/api/account/create).
 2. Add `TestConfiguration.swift` to LastfmClientTests.
-  * Please copy `TestConfiguration.sample.swift` and use it.
-  * Set lastfm api key.
+    * Please copy `TestConfiguration.sample.swift` and use it.
+    * Set lastfm api key.
 3. Run tests!
   

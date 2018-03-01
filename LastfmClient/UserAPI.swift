@@ -118,7 +118,7 @@ extension UserAPI {
             q["user"] = user
             q["limit"] = limit
             q["page"] = page
-            q["period"] = period
+            q["period"] = period.rawValue
             return q
         }
     }

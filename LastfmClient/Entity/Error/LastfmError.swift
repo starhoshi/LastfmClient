@@ -8,6 +8,13 @@
 
 import Foundation
 
+/// Error Codes
+/// https://www.last.fm/api/errorcodes
+///
+/// You may receive one of the following error codes from your webservices request.
+/// Some indicate errors you may encounter in development (e.g. "10: Invalid API key"),
+/// and some indicate errors you may encounter and need to handle in normal operation
+/// (e.g. "20: Not Enough Content")
 public struct LastfmError: Error, Decodable {
     public let error: Code
     public let message: String

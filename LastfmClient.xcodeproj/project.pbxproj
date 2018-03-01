@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2E5019E5B3B5C734B00528D3 /* Pods_LastfmClientTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC10C93A5B58DBA308A8769C /* Pods_LastfmClientTests.framework */; };
+		3209CD4E204839F9003DB694 /* LastfmError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3209CD4D204839F9003DB694 /* LastfmError.swift */; };
 		323D8470204285A100E3343F /* TopTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323D846F204285A100E3343F /* TopTrack.swift */; };
 		323D84722042920F00E3343F /* DateDecodableMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323D84712042920F00E3343F /* DateDecodableMap.swift */; };
 		323D84742042922200E3343F /* RegisteredDecodableMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323D84732042922200E3343F /* RegisteredDecodableMap.swift */; };
@@ -46,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		020687654B5D4344B53FC842 /* Pods-LastfmClientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LastfmClientTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LastfmClientTests/Pods-LastfmClientTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3209CD4D204839F9003DB694 /* LastfmError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastfmError.swift; sourceTree = "<group>"; };
 		323D846F204285A100E3343F /* TopTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopTrack.swift; sourceTree = "<group>"; };
 		323D84712042920F00E3343F /* DateDecodableMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateDecodableMap.swift; sourceTree = "<group>"; };
 		323D84732042922200E3343F /* RegisteredDecodableMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisteredDecodableMap.swift; sourceTree = "<group>"; };
@@ -112,6 +114,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3209CD4C204839E0003DB694 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				3209CD4D204839F9003DB694 /* LastfmError.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
 		323D84772042925B00E3343F /* Shared */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +194,7 @@
 		32484BC82037FFD200BCE94B /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				3209CD4C204839E0003DB694 /* Error */,
 				323D84772042925B00E3343F /* Shared */,
 				32CACFFE20415D8A004BAC93 /* RecentTrack.swift */,
 				323D846F204285A100E3343F /* TopTrack.swift */,
@@ -522,6 +533,7 @@
 			files = (
 				323D847B2042927400E3343F /* Attr.swift in Sources */,
 				323D84792042926300E3343F /* ListResponse.swift in Sources */,
+				3209CD4E204839F9003DB694 /* LastfmError.swift in Sources */,
 				32CACFFF20415D8A004BAC93 /* RecentTrack.swift in Sources */,
 				323D84722042920F00E3343F /* DateDecodableMap.swift in Sources */,
 				323D8470204285A100E3343F /* TopTrack.swift in Sources */,

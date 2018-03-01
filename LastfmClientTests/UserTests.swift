@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import APIKit
 import LastfmClient
 
 class UserTests: XCTestCase {
@@ -110,6 +111,28 @@ class UserTests: XCTestCase {
                 XCTAssertEqual(response.attr.perPage, 10)
             case .failure(let error):
                 XCTFail("\(error)")
+            }
+            expectation.fulfill()
+        }
+
+        wait(for: [expectation], timeout: 20)
+    }
+
+    func testGetRecentTracksWhenUserNotExist() {
+        let expectation = XCTestExpectation(description: "getRecentTracks")
+
+        let user = UserAPI(user: "not exist user")
+        user.getRecentTracks(limit: 10, page: 1, extended: false) { result in
+            switch result {
+            case .success(let response):
+                XCTFail("\(response)")
+            case .failure(let error):
+                if case .responseError(let e as LastfmError) = error {
+                    XCTAssertEqual(e.error, LastfmError.Code.invalidParameters)
+                    XCTAssertEqual(e.message, "User not found")
+                } else {
+                    XCTFail("\(error)")
+                }
             }
             expectation.fulfill()
         }

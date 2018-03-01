@@ -59,6 +59,9 @@ extension LastfmRequest where Response: Decodable {
         if let string = String(data: data, encoding: .utf8) {
             print("response: \(string)")
         }
+        if let lastfmError = try? JSONDecoder().decode(LastfmError.self, from: data) {
+            throw lastfmError
+        }
         return try JSONDecoder().decode(Response.self, from: data)
     }
 }

@@ -10,6 +10,14 @@ import Foundation
 import APIKit
 import Result
 
+public enum Period: String {
+    case overall
+    case sevenDay = "7day"
+    case oneMonth = "1month"
+    case threeMonth = "3month"
+    case sixMonth = "6month"
+    case twelveMonth = "12month"
+}
 
 /// https://www.last.fm/api - User
 public class UserAPI {
@@ -51,15 +59,6 @@ public class UserAPI {
         Session.shared.send(request) { result in
             handler(result)
         }
-    }
-
-    public enum Period: String {
-        case overall
-        case sevenDay = "7day"
-        case oneMonth = "1month"
-        case threeMonth = "3month"
-        case sixMonth = "6month"
-        case twelveMonth = "12month"
     }
 
     public func getTopTracks(user: String? = nil, limit: Int = 50, page: Int = 1, period: Period = .overall, _ handler: @escaping (Result<TopTracksResponse, SessionTaskError>) -> Void) {

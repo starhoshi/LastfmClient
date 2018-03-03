@@ -8,13 +8,6 @@
 
 import Foundation
 
-public struct Image: Decodable {
-    public let small: URL?
-    public let medium: URL?
-    public let large: URL?
-    public let extralarge: URL?
-}
-
 public struct User: Decodable {
     public let name: String
     public let realname: String?

@@ -29,19 +29,15 @@ struct ImageDecodableMap: Decodable {
     }
 
     init(from decoder: Decoder) throws {
-        var images: [_Image] = []
         var unkeyedContainer = try decoder.unkeyedContainer()
-        while !unkeyedContainer.isAtEnd {
-            let image = try unkeyedContainer.decode(_Image.self)
-            images.append(image)
-        }
         var small: URL?
         var medium: URL?
         var large: URL?
         var extralarge: URL?
-        images.forEach { img in
-            let url = URL(string: img.text)
-            switch img.size {
+        while !unkeyedContainer.isAtEnd {
+            let image = try unkeyedContainer.decode(_Image.self)
+            let url = URL(string: image.text)
+            switch image.size {
             case .small:
                 small = url
             case .medium:

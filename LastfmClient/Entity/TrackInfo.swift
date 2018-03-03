@@ -8,6 +8,11 @@
 
 import Foundation
 
+public struct Tag: Decodable {
+    public let name: String
+    public let url: URL
+}
+
 public struct TrackInfo: Decodable {
     public let name: String
     public let url: URL
@@ -16,7 +21,7 @@ public struct TrackInfo: Decodable {
     public let listeners: Int
     public let playcount: Int
     public let artist: Artist
-//    public let toptags: Int
+//    public let toptags: [Tag]
 
     private enum CodingKeys: String, CodingKey {
         case name
@@ -51,47 +56,3 @@ public struct TrackInfo: Decodable {
 //        toptags = try user.decode(StringCodableMap<Int>.self, forKey: .bootstrap).decoded
     }
 }
-
-//{
-//    track: {
-//        name: "宙船",
-//        url: "https://www.last.fm/music/TOKIO/_/%E5%AE%99%E8%88%B9",
-//        duration: "0",
-//        streamable: {
-//            #text: "0",
-//            fulltrack: "0"
-//        },
-//        listeners: "2872",
-//        playcount: "28824",
-//        artist: {
-//            name: "TOKIO",
-//            mbid: "d210bd3e-68db-4987-a714-0214449e361d",
-//            url: "https://www.last.fm/music/TOKIO"
-//        },
-//        toptags: {
-//            tag: [
-//            {
-//            name: "j-pop",
-//            url: "https://www.last.fm/tag/j-pop"
-//            },
-//            {
-//            name: "rock",
-//            url: "https://www.last.fm/tag/rock"
-//            },
-//            {
-//            name: "pop",
-//            url: "https://www.last.fm/tag/pop"
-//            },
-//            {
-//            name: "JPop",
-//            url: "https://www.last.fm/tag/JPop"
-//            },
-//            {
-//            name: "freaking awesome",
-//            url: "https://www.last.fm/tag/freaking+awesome"
-//            }
-//            ]
-//        }
-//    }
-//}
-

@@ -16,7 +16,7 @@ public class TrackAPI {
     /// artist (Required (unless mbid)] : The artist name
     /// username (Optional) : The username for the context of the request. If supplied, the user's playcount for this track and whether they have loved the track is included in the response.
     /// autocorrect[0|1] (Optional) : Transform misspelled artist and track names into correct artist and track names, returning the correct version instead. The corrected artist and track name will be returned in the response.
-    public static func getInfo(mbid: String? = nil, track: String? = nil, artist: String? = nil, username: String? = nil, autocorrect: Bool = false, _ handler: @escaping (Result<User, SessionTaskError>) -> Void) {
+    public static func getInfo(mbid: String? = nil, track: String? = nil, artist: String? = nil, username: String? = nil, autocorrect: Bool = false, _ handler: @escaping (Result<TrackInfo, SessionTaskError>) -> Void) {
         let request = TrackAPI.InfoRequest(mbid: mbid, track: track, artist: artist, username: username, autocorrect: autocorrect)
         Session.shared.send(request) { result in
             handler(result)
@@ -39,7 +39,7 @@ extension TrackAPI {
             self.autocorrect = autocorrect
         }
 
-        typealias Response = User
+        typealias Response = TrackInfo
 
         var method: HTTPMethod {
             return .get

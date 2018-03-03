@@ -66,4 +66,3 @@ public struct User: Decodable {
         image = try user.decode(ImageDecodableMap.self, forKey: .image).decoded
     }
 }
-

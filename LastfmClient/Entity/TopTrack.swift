@@ -15,7 +15,7 @@ public struct TopTrack: Decodable {
     public let mbid: String
     public let url: URL
     public let streamable: Bool
-    public let artist: TopArtist
+    public let artist: Artist
     public let image: Image
     public let rank: Int
 
@@ -49,30 +49,9 @@ public struct TopTrack: Decodable {
         url = try decoder.decode(URL.self, forKey: .url)
         let streamableDecoder = try decoder.nestedContainer(keyedBy: StreamableKeys.self, forKey: .streamable)
         streamable = try streamableDecoder.decode(StringCodableMap<Int>.self, forKey: .fulltrack).decoded == 1
-        artist = try decoder.decode(TopArtist.self, forKey: .artist)
+        artist = try decoder.decode(Artist.self, forKey: .artist)
         image = try decoder.decode(ImageDecodableMap.self, forKey: .image).decoded
         let rankDecoder = try decoder.nestedContainer(keyedBy: RankKeys.self, forKey: .rank)
         rank = try rankDecoder.decode(StringCodableMap<Int>.self, forKey: .rank).decoded
     }
 }
-
-public struct TopArtist: Decodable {
-    public let name: String
-    public let mbid: String
-    public let url: URL
-
-    private enum CodingKeys: String, CodingKey {
-        case name
-        case mbid
-        case url
-    }
-
-    public init(from decoder: Decoder) throws {
-        let decoder = try decoder.container(keyedBy: CodingKeys.self)
-
-        name = try decoder.decode(String.self, forKey: .name)
-        mbid = try decoder.decode(String.self, forKey: .mbid)
-        url = try decoder.decode(URL.self, forKey: .url)
-    }
-}
-

@@ -19,15 +19,11 @@ class TrackTests: XCTestCase {
     func testGetInfoWhenExistImage() {
         let expectation = XCTestExpectation(description: "getInfo")
 
-        TrackAPI.getInfo(track: "little my star", artist: "U", autocorrect: false) { result in
+        TrackAPI.getInfo(track: "little my star", artist: "U", username: "star__hoshi", autocorrect: false) { result in
             switch result {
-            case .success(let user):
-                XCTAssertEqual(user.name, "RJ")
-                XCTAssertEqual(user.realname, "Richard Jones ")
-                XCTAssertEqual(user.image.small?.absoluteString, "https://lastfm-img2.akamaized.net/i/u/34s/b26d6fd11de240a1c045dfb5c5d9fe65.png")
-                XCTAssertEqual(user.image.medium?.absoluteString, "https://lastfm-img2.akamaized.net/i/u/64s/b26d6fd11de240a1c045dfb5c5d9fe65.png")
-                XCTAssertEqual(user.image.large?.absoluteString, "https://lastfm-img2.akamaized.net/i/u/174s/b26d6fd11de240a1c045dfb5c5d9fe65.png")
-                XCTAssertEqual(user.image.extralarge?.absoluteString, "https://lastfm-img2.akamaized.net/i/u/300x300/b26d6fd11de240a1c045dfb5c5d9fe65.png")
+            case .success(let response):
+                XCTAssertEqual(response.name, "little my star")
+                XCTAssertFalse(response.streamable)
             case .failure(let error):
                 XCTFail("\(error)")
             }
@@ -37,3 +33,5 @@ class TrackTests: XCTestCase {
         wait(for: [expectation], timeout: 20)
     }
 }
+
+

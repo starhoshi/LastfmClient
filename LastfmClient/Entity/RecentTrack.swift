@@ -17,7 +17,7 @@ public struct RecentTrack: Decodable {
     public let url: URL
     public let date: Date?
     public let nowplaying: Bool
-    public let album: Album
+    public let album: RecentAlbum
     public let artist: RecentArtist
 
     private enum CodingKeys: String, CodingKey {
@@ -48,19 +48,18 @@ public struct RecentTrack: Decodable {
         mbid = try decoder.decode(String.self, forKey: .mbid)
         url = try decoder.decode(URL.self, forKey: .url)
         date = try decoder.decodeIfPresent(DateDecodableMap.self, forKey: .date)?.decoded
-        album = try decoder.decode(Album.self, forKey: .album)
+        album = try decoder.decode(RecentAlbum.self, forKey: .album)
         artist = try decoder.decode(RecentArtist.self, forKey: .artist)
         if decoder.contains(.nowplaying) {
             let nowplayingDecoder = try decoder.nestedContainer(keyedBy: NowplayingKeys.self, forKey: .nowplaying)
             nowplaying = try nowplayingDecoder.decodeIfPresent(StringCodableMap<Bool>.self, forKey: .nowplaying)?.decoded ?? false
-
         } else {
             nowplaying = false
         }
     }
 }
 
-public struct Album: Decodable {
+public struct RecentAlbum: Decodable {
     public let text: String
     public let mbid: String
 

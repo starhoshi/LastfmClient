@@ -13,6 +13,48 @@ public struct Tag: Decodable {
     public let url: URL
 }
 
+public struct Wiki: Decodable {
+    public let published: String
+    public let summary: String
+    public let content: String
+}
+
+public struct Album: Decodable {
+    public let artist: String
+    public let title: String
+    public let mbid: String
+    public let url: URL
+    public let image: Image
+    public let position: Int
+
+    private enum CodingKeys: String, CodingKey {
+        case artist
+        case title
+        case mbid
+        case url
+        case image
+        case position = "@attr"
+    }
+
+    private enum PositionKeys: String, CodingKey {
+        case position
+    }
+
+
+    public init(from decoder: Decoder) throws {
+        let root = try decoder.container(keyedBy: CodingKeys.self)
+
+        artist = try root.decode(String.self, forKey: .artist)
+        title = try root.decode(String.self, forKey: .title)
+        mbid = try root.decode(String.self, forKey: .mbid)
+        url = try root.decode(URL.self, forKey: .url)
+        image = try root.decode(ImageDecodableMap.self, forKey: .image).decoded
+
+        let position = try root.nestedContainer(keyedBy: PositionKeys.self, forKey: .position)
+        self.position = try position.decode(StringCodableMap<Int>.self, forKey: .position).decoded
+    }
+}
+
 public struct TrackInfo: Decodable {
     public let name: String
     public let url: URL
@@ -23,6 +65,12 @@ public struct TrackInfo: Decodable {
     public let artist: Artist
     public let toptags: [Tag]
 
+    public let mbid: String?
+    public let album: Album?
+    public let userplaycount: Int?
+    public let userloved: Bool?
+    public let wiki: Wiki?
+
     private enum CodingKeys: String, CodingKey {
         case name
         case url
@@ -32,6 +80,11 @@ public struct TrackInfo: Decodable {
         case playcount
         case artist
         case toptags
+        case mbid
+        case album
+        case userplaycount
+        case userloved
+        case wiki
     }
 
     private enum TrackKeys: String, CodingKey {
@@ -54,5 +107,11 @@ public struct TrackInfo: Decodable {
         playcount = try root.decode(StringCodableMap<Int>.self, forKey: .playcount).decoded
         artist = try root.decode(Artist.self, forKey: .artist)
         toptags = try root.decode(TagsDecodableMap.self, forKey: .toptags).decoded
+        mbid = try root.decodeIfPresent(String.self, forKey: .mbid)
+        album = try root.decodeIfPresent(Album.self, forKey: .album)
+        userplaycount = try root.decodeIfPresent(StringCodableMap<Int>.self, forKey: .userplaycount)?.decoded
+        let userloved = try root.decodeIfPresent(StringCodableMap<Int>.self, forKey: .userloved)?.decoded
+        self.userloved = userloved == nil ? nil : userloved == 1
+        wiki = try root.decodeIfPresent(Wiki.self, forKey: .wiki)
     }
 }

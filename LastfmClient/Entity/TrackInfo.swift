@@ -44,8 +44,7 @@ public struct TrackInfo: Decodable {
         name = try root.decode(String.self, forKey: .name)
         url = try root.decode(URL.self, forKey: .url)
         duration = try root.decode(StringCodableMap<Int>.self, forKey: .duration).decoded
-        let streamableDecoder = try root.nestedContainer(keyedBy: StreamableKeys.self, forKey: .streamable)
-        streamable = try streamableDecoder.decode(StringCodableMap<Int>.self, forKey: .fulltrack).decoded == 1
+        streamable = try root.decode(StreamableDecodableMap.self, forKey: .streamable).decoded
         listeners = try root.decode(StringCodableMap<Int>.self, forKey: .listeners).decoded
         playcount = try root.decode(StringCodableMap<Int>.self, forKey: .playcount).decoded
         artist = try root.decode(Artist.self, forKey: .artist)

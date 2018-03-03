@@ -47,8 +47,7 @@ public struct TopTrack: Decodable {
         playcount = try decoder.decode(StringCodableMap<Int>.self, forKey: .playcount).decoded
         mbid = try decoder.decode(String.self, forKey: .mbid)
         url = try decoder.decode(URL.self, forKey: .url)
-        let streamableDecoder = try decoder.nestedContainer(keyedBy: StreamableKeys.self, forKey: .streamable)
-        streamable = try streamableDecoder.decode(StringCodableMap<Int>.self, forKey: .fulltrack).decoded == 1
+        streamable = try decoder.decode(StreamableDecodableMap.self, forKey: .streamable).decoded
         artist = try decoder.decode(Artist.self, forKey: .artist)
         image = try decoder.decode(ImageDecodableMap.self, forKey: .image).decoded
         let rankDecoder = try decoder.nestedContainer(keyedBy: RankKeys.self, forKey: .rank)

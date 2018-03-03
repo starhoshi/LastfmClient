@@ -156,13 +156,13 @@
 		32484B872037F27600BCE94B /* LastfmClient */ = {
 			isa = PBXGroup;
 			children = (
+				32519ED0204A64E20078373D /* API */,
 				32CACFF920384C8B004BAC93 /* Decodable */,
 				32484BC82037FFD200BCE94B /* Entity */,
 				32484BC52037F9D500BCE94B /* Configuration.swift */,
 				32484B892037F27600BCE94B /* Info.plist */,
 				32484BC32037F7D200BCE94B /* LastfmAPI.swift */,
 				32484B882037F27600BCE94B /* LastfmClient.h */,
-				32484BCB2038001B00BCE94B /* UserAPI.swift */,
 			);
 			path = LastfmClient;
 			sourceTree = "<group>";
@@ -201,6 +201,14 @@
 				32CACFFC20384CCC004BAC93 /* User.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		32519ED0204A64E20078373D /* API */ = {
+			isa = PBXGroup;
+			children = (
+				32484BCB2038001B00BCE94B /* UserAPI.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 		32CACFF920384C8B004BAC93 /* Decodable */ = {

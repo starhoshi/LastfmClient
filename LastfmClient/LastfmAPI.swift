@@ -56,9 +56,9 @@ extension LastfmRequest where Response: Decodable {
         guard let data: Data = object as? Data else {
             throw ResponseError.unexpectedObject(object)
         }
-        if let string = String(data: data, encoding: .utf8) {
-            print("response: \(string)")
-        }
+//        if let string = String(data: data, encoding: .utf8) {
+//            print("response: \(string)")
+//        }
         if let lastfmError = try? JSONDecoder().decode(LastfmError.self, from: data) {
             throw lastfmError
         }
@@ -71,15 +71,15 @@ extension LastfmRequest {
         var urlRequest = urlRequest
         urlRequest.timeoutInterval = 10.0
 
-        print("requestURL: \(urlRequest)")
-        print("requestHeader: \(urlRequest.allHTTPHeaderFields!)")
-        print("requestBody: \(String(data: urlRequest.httpBody ?? Data(), encoding: .utf8).debugDescription)")
+//        print("requestURL: \(urlRequest)")
+//        print("requestHeader: \(urlRequest.allHTTPHeaderFields!)")
+//        print("requestBody: \(String(data: urlRequest.httpBody ?? Data(), encoding: .utf8).debugDescription)")
         return urlRequest
     }
 
     public func intercept(object: Any, urlResponse: HTTPURLResponse) throws -> Any {
-        print("raw response header: \(urlResponse)")
-        print("raw response body: \(object)")
+//        print("raw response header: \(urlResponse)")
+//        print("raw response body: \(object)")
         switch urlResponse.statusCode {
         case 200..<300:
             return object

@@ -13,7 +13,7 @@ public struct RecentTrack: Decodable {
     public let image: Image
     public let loved: Bool?
     public let streamable: Bool
-    public let mbid: String
+    public let mbid: String?
     public let url: URL
     public let date: Date?
     public let nowplaying: Bool
@@ -45,7 +45,8 @@ public struct RecentTrack: Decodable {
         let loved = try decoder.decodeIfPresent(StringCodableMap<Int>.self, forKey: .loved)?.decoded
         self.loved = loved == nil ? nil : loved == 1
         streamable = try decoder.decode(StringCodableMap<Int>.self, forKey: .streamable).decoded == 1
-        mbid = try decoder.decode(String.self, forKey: .mbid)
+        let mbid = try decoder.decode(String.self, forKey: .mbid)
+        self.mbid = mbid == "" ? nil : mbid
         url = try decoder.decode(URL.self, forKey: .url)
         date = try decoder.decodeIfPresent(DateDecodableMap.self, forKey: .date)?.decoded
         album = try decoder.decode(RecentAlbum.self, forKey: .album)

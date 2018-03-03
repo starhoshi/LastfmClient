@@ -10,7 +10,7 @@ import Foundation
 
 public struct Artist: Decodable {
     public let name: String
-    public let mbid: String
+    public let mbid: String?
     public let url: URL
 
     private enum CodingKeys: String, CodingKey {
@@ -23,7 +23,12 @@ public struct Artist: Decodable {
         let decoder = try decoder.container(keyedBy: CodingKeys.self)
 
         name = try decoder.decode(String.self, forKey: .name)
-        mbid = try decoder.decode(String.self, forKey: .mbid)
+        let mbid = try decoder.decodeIfPresent(String.self, forKey: .mbid)
+        if let mbid = mbid, mbid != "" {
+            self.mbid = mbid
+        } else {
+            self.mbid = nil
+        }
         url = try decoder.decode(URL.self, forKey: .url)
     }
 }

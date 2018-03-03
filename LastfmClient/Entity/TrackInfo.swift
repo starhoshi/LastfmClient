@@ -22,7 +22,7 @@ public struct Wiki: Decodable {
 public struct Album: Decodable {
     public let artist: String
     public let title: String
-    public let mbid: String
+    public let mbid: String?
     public let url: URL
     public let image: Image
     public let position: Int
@@ -46,7 +46,7 @@ public struct Album: Decodable {
 
         artist = try root.decode(String.self, forKey: .artist)
         title = try root.decode(String.self, forKey: .title)
-        mbid = try root.decode(String.self, forKey: .mbid)
+        mbid = try root.decodeIfPresent(String.self, forKey: .mbid)
         url = try root.decode(URL.self, forKey: .url)
         image = try root.decode(ImageDecodableMap.self, forKey: .image).decoded
 

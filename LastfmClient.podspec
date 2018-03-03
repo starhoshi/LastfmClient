@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name               = "LastfmClient"
-  s.version            = "0.1.7"
+  s.version            = "0.1.8"
   s.summary            = "A Swifty last.fm api client using Codable."
   s.homepage           = "https://github.com/starhoshi/LastfmClient"
   s.license            = { :type => 'MIT', :file => 'LICENSE' }

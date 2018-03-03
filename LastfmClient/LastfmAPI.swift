@@ -71,7 +71,7 @@ extension LastfmRequest {
         var urlRequest = urlRequest
         urlRequest.timeoutInterval = 10.0
 
-//        print("requestURL: \(urlRequest)")
+        print("requestURL: \(urlRequest)")
 //        print("requestHeader: \(urlRequest.allHTTPHeaderFields!)")
 //        print("requestBody: \(String(data: urlRequest.httpBody ?? Data(), encoding: .utf8).debugDescription)")
         return urlRequest

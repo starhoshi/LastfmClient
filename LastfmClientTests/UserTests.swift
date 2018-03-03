@@ -16,10 +16,6 @@ class UserTests: XCTestCase {
         Configuration.shared.configure(apiKey: TestConfiguration.apiKey)
     }
 
-    override func tearDown() {
-        super.tearDown()
-    }
-
     func testGetInfoWhenNotExistImage() {
         let expectation = XCTestExpectation(description: "getInfo")
 

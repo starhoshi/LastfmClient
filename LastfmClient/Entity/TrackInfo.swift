@@ -21,7 +21,7 @@ public struct TrackInfo: Decodable {
     public let listeners: Int
     public let playcount: Int
     public let artist: Artist
-//    public let toptags: [Tag]
+    public let toptags: [Tag]
 
     private enum CodingKeys: String, CodingKey {
         case name
@@ -31,7 +31,7 @@ public struct TrackInfo: Decodable {
         case listeners
         case playcount
         case artist
-//        case toptags
+        case toptags
     }
 
     private enum TrackKeys: String, CodingKey {
@@ -53,6 +53,6 @@ public struct TrackInfo: Decodable {
         listeners = try root.decode(StringCodableMap<Int>.self, forKey: .listeners).decoded
         playcount = try root.decode(StringCodableMap<Int>.self, forKey: .playcount).decoded
         artist = try root.decode(Artist.self, forKey: .artist)
-//        toptags = try user.decode(StringCodableMap<Int>.self, forKey: .bootstrap).decoded
+        toptags = try root.decode(TagsDecodableMap.self, forKey: .toptags).decoded
     }
 }

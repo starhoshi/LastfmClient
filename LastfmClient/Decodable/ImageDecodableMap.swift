@@ -52,3 +52,17 @@ struct ImageDecodableMap: Decodable {
         self.decoded = Image(small: small, medium: medium, large: large, extralarge: extralarge)
     }
 }
+
+
+struct TagsDecodableMap: Decodable {
+    var decoded: [Tag]
+
+    private enum TagKeys: String, CodingKey {
+        case tag
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: TagKeys.self)
+        decoded = try container.decode([Tag].self, forKey: .tag)
+    }
+}

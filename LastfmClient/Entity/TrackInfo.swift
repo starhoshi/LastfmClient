@@ -25,7 +25,7 @@ public struct Album: Decodable {
     public let mbid: String?
     public let url: URL
     public let image: Image
-    public let position: Int
+    public let position: Int?
 
     private enum CodingKeys: String, CodingKey {
         case artist
@@ -50,8 +50,12 @@ public struct Album: Decodable {
         url = try root.decode(URL.self, forKey: .url)
         image = try root.decode(ImageDecodableMap.self, forKey: .image).decoded
 
-        let position = try root.nestedContainer(keyedBy: PositionKeys.self, forKey: .position)
-        self.position = try position.decode(StringCodableMap<Int>.self, forKey: .position).decoded
+        if root.contains(.position) {
+            let position = try root.nestedContainer(keyedBy: PositionKeys.self, forKey: .position)
+            self.position = try position.decodeIfPresent(StringCodableMap<Int>.self, forKey: .position)?.decoded
+        } else {
+            self.position = nil
+        }
     }
 }
 

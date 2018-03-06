@@ -67,4 +67,21 @@ class TrackTests: XCTestCase {
 
         wait(for: [expectation], timeout: 20)
     }
+
+    func testGetInfoWhenAttrNotExist() {
+        let expectation = XCTestExpectation(description: "getInfo")
+
+        TrackAPI.getInfo(track: "ミカヅキ", artist: "さユり", autocorrect: true) { result in
+            switch result {
+            case .success(let response):
+                XCTAssertEqual(response.name, "ミカヅキ")
+                XCTAssertFalse(response.streamable)
+            case .failure(let error):
+                XCTFail("\(error)")
+            }
+            expectation.fulfill()
+        }
+
+        wait(for: [expectation], timeout: 20)
+    }
 }
